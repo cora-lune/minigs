@@ -1,0 +1,11 @@
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation
+
+genus:
+    path: /
+    defaults: {_controller: AppBundle:Controller:genusController}
+
+index:
+    path: /produit
+    defaults: {_controller: AppBundle:Controller:indexController}
