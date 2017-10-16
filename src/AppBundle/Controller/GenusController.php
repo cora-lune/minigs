@@ -13,7 +13,7 @@ class GenusController extends Controller
     public function testAction()
     {
 
-
+        echo "test";
 
         return $this->render('default/test.html.twig');
     }
