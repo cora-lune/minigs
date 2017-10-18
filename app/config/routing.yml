@@ -9,3 +9,11 @@ genus:
 index:
     path: /produit
     defaults: {_controller: AppBundle:Controller:indexController}
+
+admin:
+    path: /admin
+    defaults: {_controller: AppBundle:Controller:adminController}
+
+test:
+    path: /test
+    defaults: {_controller: AppBundle:Controller:testController}
