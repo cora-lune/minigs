@@ -1,0 +1,12 @@
+{% for products in products %}
+    <section>
+        <ul>
+            <li>{{ products.nom }}</li>
+            <li>{{ products.categorie }}</li>
+            <li>{{ products.description }}</li>
+            <li>{{ products.disponible }}</li>
+            <li>{{ products.image }}</li>
+            <li>{{ products.prix}}</li>
+        </ul>
+    </section>
+{% endfor %}
