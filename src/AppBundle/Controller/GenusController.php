@@ -12,8 +12,6 @@ class GenusController extends Controller
      */
     public function testAction()
     {
-
-
         return $this->render('default/test.html.twig');
     }
 
