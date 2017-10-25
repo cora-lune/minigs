@@ -49,4 +49,43 @@ class ProductsController extends Controller
         return $this->render('default/productsAdd.html.twig', array('form' => $form->createView()));
     }
 
+
+    /**
+     * @Route("/liste", name="ProductsListe")
+     *
+     * @return Response
+     */
+
+    public function productsList()
+    {
+        $repository = $this->getDoctrine()->getRepository('AppBundle:Products');
+        $products = $repository->findAll();
+        return $this->render('default/productsListe.html.twig', array('products' => $products));
+    }
+
+    /**
+     * @Route("/edit/{id}", name="ProductsEdit")
+     *
+     * @return Response
+     */
+    public function edit(Request $request, Products $products)
+    {
+        $form = $this->createForm(ProductsType::class, $products);
+
+        $form->handleRequest($request);
+
+        if($form->isSubmitted() && $form->isValid())  {
+
+            $em = $this->getDoctrine()->getManager();
+
+            $em->flush();
+
+            return $this->render('default/productsModification.html.twig');
+        }
+
+
+        return $this->render('default/productsAdd.html.twig', array('form' => $form->createView()));
+    }
+
+
 }

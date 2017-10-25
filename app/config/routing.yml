@@ -26,3 +26,12 @@ index:
 index:
     path: /products
     defaults: {_controller: AppBundle:Controller:ProductsController}
+
+index:
+    path: /liste
+    defaults: {_controller: AppBundle:Controller:ProductsController}
+
+
+index:
+    path: /edit/{id}
+    defaults: {_controller: AppBundle:Controller:ProductsController}

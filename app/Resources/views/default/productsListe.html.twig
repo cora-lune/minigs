@@ -1,0 +1,19 @@
+{% extends "::base.html.twig" %}
+{% block body %}
+    <div class="container">
+        {% for products in products %}
+            <section>
+                <ul>
+                    <a href="{{ path('ProductsEdit', {'id':products.id}) }}">
+                        <li>{{ products.nom }}</li>
+                        <li>{{ products.categorie }}</li>
+                        <li>{{ products.description }}</li>
+                        <li>{{ products.disponible }}</li>
+                        <li>{{ products.image }}</li>
+                        <li>{{ products.prix}}</li>
+                    </a>
+                </ul>
+            </section>
+        {% endfor %}
+    </div>
+{% endblock %}
