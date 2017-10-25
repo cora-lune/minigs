@@ -17,3 +17,8 @@ admin:
 test:
     path: /test
     defaults: {_controller: AppBundle:Controller:testController}
+
+
+index:
+    path: /testformulaire
+    defaults: {_controller: AppBundle:Controller:FormController}
