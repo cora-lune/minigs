@@ -22,6 +22,8 @@ class FormController extends Controller
     public function testformulaireAction()
     {
         $form = $this->createForm(testType::class);
+
+
         return $this->render('Formulaire/testformulaire.html.twig', array('form' => $form->createView()));
     }
 

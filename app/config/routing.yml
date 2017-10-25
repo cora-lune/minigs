@@ -22,3 +22,7 @@ test:
 index:
     path: /testformulaire
     defaults: {_controller: AppBundle:Controller:FormController}
+
+index:
+    path: /products
+    defaults: {_controller: AppBundle:Controller:ProductsController}
