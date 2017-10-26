@@ -1,5 +1,8 @@
-{% extends "::base.html.twig" %}
 {% block body %}
+    <div class="span3" xmlns="http://www.w3.org/1999/html">
+        {% include 'layout.html.twig' %}
+    </div>
+
 <div class="container">
     <div class="row">
         <div class="span9">
@@ -21,7 +24,7 @@
                         </select>
 
                         <div>
-                            <a class="btn btn-primary" href="#">Voir le produit</a>
+                            <a class="btn btn-primary" href="{{ path('index') }}">Voir le produit</a>
                         </div>
                     </form>
 
@@ -33,3 +36,9 @@
     </div>
 </div>
 {% endblock %}
+
+
+
+    {% block footer %}
+        {% include 'footer.html.twig' %}
+    {% endblock %}

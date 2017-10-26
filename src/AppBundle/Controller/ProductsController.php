@@ -51,7 +51,7 @@ class ProductsController extends Controller
 
 
     /**
-     * @Route("/liste", name="ProductsListe")
+     * @Route("/liste", name="productsListe")
      *
      * @return Response
      */
@@ -64,12 +64,15 @@ class ProductsController extends Controller
     }
 
     /**
-     * @Route("/edit/{id}", name="ProductsEdit")
+     * @Route("/edit/{id}", name="productsEdition")
      *
+     * @param Request $request
+     * @param Products $products
      * @return Response
      */
     public function edit(Request $request, Products $products)
     {
+
         $form = $this->createForm(ProductsType::class, $products);
 
         $form->handleRequest($request);
@@ -77,15 +80,33 @@ class ProductsController extends Controller
         if($form->isSubmitted() && $form->isValid())  {
 
             $em = $this->getDoctrine()->getManager();
-
+            $em->edit($products);
             $em->flush();
 
             return $this->render('default/productsModification.html.twig');
         }
 
-
         return $this->render('default/productsAdd.html.twig', array('form' => $form->createView()));
+
     }
+
+    /**
+     * @Route("/delete/{id}", name="productsDelete")
+     *
+     * @param Products $products
+     * @return Response
+     */
+
+    public function delete(Products $products)
+    {
+
+            $em = $this->getDoctrine()->getManager();
+            $em->remove($products);
+            $em->flush();
+
+            return $this->render('default/productsModification.html.twig');
+        }
+
 
 
 }

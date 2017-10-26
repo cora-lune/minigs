@@ -14,13 +14,13 @@ use Symfony\Component\Routing\Annotation\Route;
 class adminController extends Controller
 {
     /**
-     * @Route("/admin")
+     * @Route("/admin", name="monCompte")
      */
 
     public function indexAction()
     {
 
-        return $this->render('administration/layoutadmin.html.twig');
+        return $this->render('administration/userAdmin.html.twig');
     }
 
 }

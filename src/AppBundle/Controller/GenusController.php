@@ -8,7 +8,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class GenusController extends Controller
 {
     /**
-     * @Route("/")
+     * @Route("/", name="MiniGuidesShopping")
      */
     public function testAction()
     {

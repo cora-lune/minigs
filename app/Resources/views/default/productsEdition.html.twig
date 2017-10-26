@@ -7,10 +7,16 @@
 <div class="container">
     <div class="row">
         <div class="span9">
-Produit Modifié !
+        <form action="{{ path('productsEdition') }}" method="post">
+            {{ form_start(form) }}
+            {{ form_widget(form) }}
+            <button type="submit">Modifier !</button>
+            {{ form_end(form) }}
+        </form>
     </div>
     </div>
 </div>
+
 {% endblock %}
 
 
