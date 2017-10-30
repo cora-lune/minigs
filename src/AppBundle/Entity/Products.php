@@ -54,7 +54,7 @@ class Products
      * @var string
      *
      * -- liaison unidirectionnelle entre Products et Categorie
-     * @@ORM\OneToOne(targetEntity="Categorie", cascade={"persist","remove"})
+     * @@ORM\ManyToOne(targetEntity="AppBundle\Entity\Categorie", cascade={"persist","remove"})
      *
      * @ORM\Column(name="categorie", type="string", length=80)
      */
