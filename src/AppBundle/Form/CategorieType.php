@@ -3,9 +3,11 @@
 namespace AppBundle\Form;
 
 use Doctrine\DBAL\Types\TextType;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Validator\Constraints\Choice;
 
 class CategorieType extends AbstractType
 {
@@ -14,7 +16,13 @@ class CategorieType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('name', TextType::class);
+        $builder
+
+            ->add('Categorie', EntityType::class,
+            ['class' => 'AppBundle\Entity\Categorie',
+                'placeholder' => 'Selectionnez la categorie',
+                'mapped' => false
+            ]);
     }
     
     /**

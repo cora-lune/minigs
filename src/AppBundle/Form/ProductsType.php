@@ -8,6 +8,7 @@ use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\MoneyType;
 use Symfony\Component\Form\Extension\Core\Type\UrlType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -26,7 +27,11 @@ class ProductsType extends AbstractType
                 'currency'=> false,
             ))
             ->add('disponible', CheckboxType::class)
-            ->add('categorie', TextType::class)
+            ->add('categorie', TextType::class,
+                ['class' => 'AppBundle\Entity\Categorie',
+                    'placeholder' => 'Selectionnez la categorie',
+                    'mapped' => false
+                ])
             ->add('image',UrlType::class)
         ;
     }

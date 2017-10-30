@@ -21,12 +21,15 @@ class Categorie
      */
     private $id;
 
+
     /**
      * @var string
      *
      * @ORM\Column(name="name", type="string", length=255)
      */
     private $name;
+
+
 
 
     /**
@@ -59,6 +62,10 @@ class Categorie
      * @return string
      */
     public function getName()
+    {
+        return $this->name;
+    }
+    public function __toString()
     {
         return $this->name;
     }

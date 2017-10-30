@@ -29,6 +29,7 @@ class Products
      */
     private $nom;
 
+
     /**
      * @var string
      *
@@ -53,9 +54,8 @@ class Products
     /**
      * @var string
      *
-     * -- liaison unidirectionnelle entre Products et Categorie
      * @@ORM\ManyToOne(targetEntity="AppBundle\Entity\Categorie", cascade={"persist","remove"})
-     *
+     * @ORM\JoinColumn(nullable=false)
      * @ORM\Column(name="categorie", type="string", length=80)
      */
     private $categorie;
@@ -63,8 +63,8 @@ class Products
     /**
      * @var string
      *
-     * -- liaison unidirectionnelle entre Products et Media
-     * @@ORM\OneToOne(targetEntity="Media", cascade={"persist","remove"})
+     * @@ORM\OneToOne(targetEntity="AppBundle\Entity\Media", cascade={"persist" "remove"})
+     * @ORM\JoinColumn(nullable=false)
      *
      * @ORM\Column(name="image", type="string", length=255)
      */

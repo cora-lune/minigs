@@ -40,3 +40,16 @@ index:
 index:
     path: /delete/{id}
     defaults: {_controller: AppBundle:Controller:ProductsController}
+
+
+index:
+    path: /categorie/{id}
+    defaults: {_controller: AppBundle:Controller:CategorieController}
+
+index:
+    path: /addcategorie/{id}
+    defaults: {_controller: AppBundle:Controller:CategorieController}
+
+index:
+    path: /deletecategorie/{id}
+    defaults: {_controller: AppBundle:Controller:CategorieController}
