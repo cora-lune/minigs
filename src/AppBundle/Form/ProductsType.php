@@ -27,7 +27,7 @@ class ProductsType extends AbstractType
                 'currency'=> false,
             ))
             ->add('disponible', CheckboxType::class)
-            ->add('categorie', TextType::class,
+            ->add('categorie', EntityType::class,
                 ['class' => 'AppBundle\Entity\Categorie',
                     'placeholder' => 'Selectionnez la categorie',
                     'mapped' => false
