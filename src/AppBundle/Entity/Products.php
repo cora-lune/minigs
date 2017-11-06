@@ -52,11 +52,9 @@ class Products
     private $disponible;
 
     /**
-     * @var string
      *
-     * @@ORM\ManyToOne(targetEntity="AppBundle\Entity\Categorie", cascade={"persist","remove"})
-     * @ORM\JoinColumn(nullable=false)
-     * @ORM\Column(name="categorie", type="string", length=80)
+     * @@ORM\ManyToOne(targetEntity="AppBundle\Entity\Categorie", inversedBy="products")
+     * @ORM\JoinColumn(name="categorie_id", referencedColumnName="id")
      */
     private $categorie;
 
@@ -193,7 +191,6 @@ class Products
     /**
      * Get categorie
      *
-     * @return string
      */
     public function getCategorie()
     {

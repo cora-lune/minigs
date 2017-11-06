@@ -20,7 +20,7 @@ class adminController extends Controller
     public function indexAction()
     {
 
-        return $this->render('administration/userAdmin.html.twig');
+        return $this->render('Administration/userAdmin.html.twig');
     }
 
 }
