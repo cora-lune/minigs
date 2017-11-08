@@ -1,43 +1,9 @@
     <div class="well">
         <ul class="nav nav-list">
-            <li class="nav-header-grey"> <a href="#"><h4>POUR QUI?</h4></a></li>
-            <li class="active">
-                <a href="#">Cadeau Femme</a>
-            </li>
-            <li>
-                <a href="#">Cadeau Homme</a>
-            </li>
-            </br>
-
-            <li class="nav-header-grey"> <a href="#"><h4>PAR OCCASION</h4></a></li>
-            <li>
-                <a href="#">Saint Valentin</a>
-            </li>
-            <li>
-                <a href="#">Noël</a>
-            </li>
-            </br>
-
-            <li class="nav-header-grey"> <a href="#"><h4>PAR THEMATIQUE</h4></a></li>
-            <li>
-                <a href="#">Cadeau Sportif</a>
-            </li>
-            <li>
-                <a href="#">Cadeau Geek</a>
-            </li>
-            </br>
-
-            <li class="nav-header-grey"> <a href="#"><h4>PAR CATEGORIE</h4></a></li>
-            <li>
-                <a href="#">Coffrets Cadeaux</a>
-            </li>
-            <li>
-                <a href="#">Gadgets & Humour</a>
-            </li>
-
-            </br>
-
-            <li><a href="#"><h5>NOS COUPS DE COEUR</h5></a></li>
+            <li class="nav-header-grey"> <a href="#"><h4>NOS PRODUITS</h4></a></li>
+            {{ render(controller(
+            'AppBundle:Categorie:menu'
+            )) }}
 
          </ul>
     </div>

@@ -6,29 +6,28 @@
     </div>
 
     <div class="container">
-    <div class="row">
-    <div class="span9">
-        {% for products in products %}
-            <section>
-                <ul>
-                        <li>{{ products.nom }}</li>
-                        <li>{{ products.categorie }}</li>
-                        <li>{{ products.description }}</li>
-                        <li>{{ products.disponible }}</li>
-                        <li>{{ products.image }}</li>
-                        <li>{{ products.prix}}</li>
-                    <p><a href="{{ path('productsEdition', {'id':products.id}) }}">Editer</a></p>
-                </ul>
-            </section>
-        <p><a href="{{ path('productsDelete', {'id':products.id}) }}"><button type="submit">Supprimer</button></a>
-            </p>
-        {% endfor %}
-        </br>
-        </br>
-        </br>
-        </br>
-    </div>
-    </div>
+        <div class="row">
+            <div class="span9">
+                {% for products in products %}
+                    <section>
+                        <ul>
+                            <li>{{ products.nom }}</li>
+                            <li>{{ products.description }}</li>
+                            <li>{{ products.disponible }}</li>
+                            <li>{{ products.image }}</li>
+                            <li>{{ products.prix}}</li>
+                            <p><a href="{{ path('productsEdition', {'id':products.id}) }}">Editer</a></p>
+                        </ul>
+                    </section>
+                    <p><a href="{{ path('productsDelete', {'id':products.id}) }}"><button type="submit">Supprimer</button></a>
+                    </p>
+                {% endfor %}
+                </br>
+                </br>
+                </br>
+                </br>
+            </div>
+        </div>
     </div>
 
 

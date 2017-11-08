@@ -27,6 +27,15 @@ class ProductsController extends Controller
      * @return \Symfony\Component\HttpFoundation\Response
      */
 
+    public function categorieAction()
+    {
+        //
+        return $this->render('default/productsListe.html.twig');
+    }
+
+
+
+
     public function addAction(Request $request)
     {
         $products = new Products();

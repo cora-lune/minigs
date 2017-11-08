@@ -53,3 +53,7 @@ index:
 index:
     path: /deletecategorie/{id}
     defaults: {_controller: AppBundle:Controller:CategorieController}
+
+categorieProducts:
+    path: /categorie/{categorie}
+    defaults: {_controller: AppBundle:Controller:ProductsController:categorie}

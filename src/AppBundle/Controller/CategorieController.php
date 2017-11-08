@@ -26,6 +26,17 @@ class CategorieController extends Controller
      * @return \Symfony\Component\HttpFoundation\Response
      */
 
+    public function menuAction()
+    {
+
+        $em = $this->getDoctrine()->getManager();
+
+        $categorie = $em->getRepository('AppBundle:Categorie')->findAll();
+
+
+        return $this->render('menu.html.twig', array('categorie'=>$categorie));
+    }
+
     public function addcategorieAction(Request $request)
     {
         $categorie = new Categorie();
