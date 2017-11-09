@@ -37,6 +37,11 @@ class CategorieController extends Controller
         return $this->render('menu.html.twig', array('categorie'=>$categorie));
     }
 
+    /**
+     * @Route("/addcategorie", name="addcategorie")
+     *
+     * @return Response
+     */
     public function addcategorieAction(Request $request)
     {
         $categorie = new Categorie();

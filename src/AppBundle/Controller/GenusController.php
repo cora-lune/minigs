@@ -12,7 +12,9 @@ class GenusController extends Controller
      */
     public function testAction()
     {
-        return $this->render('default/test.html.twig');
+        $em = $this->getDoctrine()->getManager();
+        $products = $em->getRepository('AppBundle:Products')->findAll();
+        return $this->render('default/test.html.twig', array ('products' => $products));
     }
 
 

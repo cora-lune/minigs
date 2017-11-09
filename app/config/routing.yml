@@ -4,7 +4,7 @@ app:
 
 genus:
     path: /
-    defaults: {_controller: AppBundle:Controller:ProductsController}
+    defaults: {_controller: AppBundle:Controller:GenusController}
 
 index:
     path: /produit
