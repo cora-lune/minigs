@@ -52,9 +52,12 @@ class Products
     private $disponible;
 
     /**
+     * @var integer
      *
      * @@ORM\ManyToOne(targetEntity="AppBundle\Entity\Categorie", inversedBy="products")
      * @ORM\JoinColumn(name="categorie_id", referencedColumnName="id")
+     *
+     * @ORM\Column(name="categorie", type="integer")
      */
     private $categorie;
 

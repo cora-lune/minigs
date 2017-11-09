@@ -27,22 +27,12 @@ class ProductsController extends Controller
      * @return \Symfony\Component\HttpFoundation\Response
      */
 
-    public function categorieAction()
-    {
-        //
-        return $this->render('default/productsListe.html.twig');
-    }
-
-
-
 
     public function addAction(Request $request)
     {
         $products = new Products();
 
         $form = $this->createForm(ProductsType::class, $products);
-
-        $form->handleRequest($request);
 
         if($form->isSubmitted() && $form->isValid())  {
 
@@ -57,6 +47,19 @@ class ProductsController extends Controller
 
         return $this->render('default/productsAdd.html.twig', array('form' => $form->createView()));
     }
+
+
+    /**
+     * @Route("/categorie/{categorie}", name="categoriecategorie")
+     */
+
+    public function categorieAction($categorie)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $products = $em->getRepository('AppBundle:Products')->byCategorie($categorie);
+        return $this->render('default/test.html.twig', array ('products' => $products));
+    }
+
 
 
     /**
@@ -81,21 +84,19 @@ class ProductsController extends Controller
      */
     public function edit(Request $request, Products $products)
     {
-
         $form = $this->createForm(ProductsType::class, $products);
 
         $form->handleRequest($request);
-
         if($form->isSubmitted() && $form->isValid())  {
 
             $em = $this->getDoctrine()->getManager();
-            $em->edit($products);
+            $em->persist($products);
             $em->flush();
 
             return $this->render('default/productsModification.html.twig');
         }
 
-        return $this->render('default/productsAdd.html.twig', array('form' => $form->createView()));
+        return $this->render('default/productsEdition.html.twig', array('product' => $products, 'form' => $form->createView()));
 
     }
 
