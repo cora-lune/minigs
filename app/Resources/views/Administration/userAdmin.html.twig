@@ -5,17 +5,24 @@
     </div>
     <div class="container">
         <div class="row">
-            <div class="span9">
+            <div class="span12">
 
                 <h1> Mon Compte </h1>
                 </br>
                 </br>
                 </br>
-                <div class="caption" >
-                    <a href="{{ path('productsListe') }}"><img src="../img/logouncadeau.png" alt="UnCadeau.com" width="235" height="155"></a>
-                    </br>
-                    <h4><a href="{{ path('productsListe') }}">Mes Produits</a></h4>
+                <ul class="thumbnails">
+
+              <li><a href="{{ path('productsListe') }}"><img src="../img/mes-produits.png" alt="UnCadeau.com" width="235" height="235"></a></li>
+
+    <li><a href="{{ path('addProducts') }}"><img src="../img/ajouter-produit.png" alt="UnCadeau.com" width="235" height="235"></a></li>
+
+
+    <li><a href="{{ path('categorie') }}"><img src="../img/mes-categories.png" alt="UnCadeau.com" width="235" height="235"></a></li>
+
+    <li><a href="{{ path('addcategorie') }}"><img src="../img/ajouter-categorie.png" alt="UnCadeau.com" width="235" height="235"></a></li>
                 </div>
+</ul>
 
                 </br>
                 </br>
