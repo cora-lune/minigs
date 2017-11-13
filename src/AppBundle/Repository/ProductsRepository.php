@@ -19,4 +19,14 @@ class ProductsRepository extends \Doctrine\ORM\EntityRepository
             ->setParameter('categorie', $categorie);
         return $qb->getQuery()->getResult();
     }
+
+    public function byProducts($products)
+    {
+        $qb = $this->createQueryBuilder('u')
+            ->select('u')
+            ->where('u.products = :products')
+            ->orderBy('u.id')
+            ->setParameter('products', $products);
+        return $qb->getQuery()->getResult();
+    }
 }

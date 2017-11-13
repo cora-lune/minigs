@@ -15,8 +15,8 @@
                         <div class="thumbnail">
                             <img src="{{ product.image }}" alt="UnCadeau.com" width="300" height="300">
                             <div class="caption">
-                                <h4>Thumbnail label</h4>
-                                <p>100,00 €</p>
+                                <h4>{{ product.nom }}</h4>
+                                <p>{{ product.prix }} €</p>
                                 <a class="btn btn-primary" href={{ path('index') }}>Plus d'infos</a>
                                 <a class="btn btn-success" href="{{ path('index') }}">Voir le produit</a>
                             </div>

@@ -19,8 +19,10 @@ class indexController extends Controller
 
     public function indexAction()
     {
-
-        return $this->render('default/index.html.twig');
+        $products  =  $this -> getDoctrine ()
+        -> getRepository('AppBundle:Products')
+            -> find(1);
+        return $this->render('default/index.html.twig', array ('products' => $products));
     }
 
 }
